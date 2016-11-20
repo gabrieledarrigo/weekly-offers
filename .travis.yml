@@ -27,5 +27,4 @@ before_script:
   - |
     composer global require wp-coding-standards/wpcs
 script:
-  - composer dump-autoload
   - phpunit
