@@ -1,0 +1,29 @@
+{
+    "name": "darrigo/weekly-offers",
+    "description": "A simple Wordpress widget that show three post",
+    "type": "library",
+    "require": {
+        "doctrine/common": "^2.6",
+        "phpoption/phpoption": "^1.5",
+        "phpunit/phpunit": "^5.6",
+        "php-di/php-di": "^5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriele D'Arrigo",
+            "email": "darrigo.g@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "autoload": {
+        "psr-4": {
+            "Darrigo\\WeeklyOffers\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Darrigo\\WeeklyOffers\\Tests\\": "tests/"
+        }
+    }
+}
