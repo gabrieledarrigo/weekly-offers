@@ -8,7 +8,7 @@ use Darrigo\WeeklyOffers\Service\ProductsService;
 
 final class Definitions
 {
-    public static final function defitinion()
+    public static final function definition()
     {
         return [
             DbProxy::class => function() {

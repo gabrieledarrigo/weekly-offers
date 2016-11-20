@@ -38,7 +38,7 @@ class WidgetManager extends \WP_Widget
     {
         // Sorry I cannot inject it since \WP_Widget doesn't accept
         // constructor args : (
-        $this->container = (new ContainerBuilder())->addDefinitions(Definitions::defitinion())->build();
+        $this->container = (new ContainerBuilder())->addDefinitions(Definitions::definition())->build();
         $this->productService = $this->container->get(ProductsService::class);
 
         parent::__construct(

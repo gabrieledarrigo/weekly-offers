@@ -18,7 +18,7 @@ env:
 
 matrix:
   include:
-    - php: 5.3
+    - php: 5.6
       env: WP_VERSION=latest WP_MULTISITE=1
 
 before_script:
@@ -32,8 +32,5 @@ before_script:
     fi
   - |
     composer global require wp-coding-standards/wpcs
-    phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
-
 script:
-  - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')
   - phpunit
