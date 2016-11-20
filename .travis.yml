@@ -24,7 +24,6 @@ before_script:
     else
       composer global require "phpunit/phpunit=4.8.*"
     fi
-  - |
-    composer global require wp-coding-standards/wpcs
+install: composer install
 script:
   - phpunit
