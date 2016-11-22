@@ -1,28 +1,38 @@
 <?php
 namespace Darrigo\WeeklyOffers\Model;
 
+/**
+ * Class Product
+ * @package Darrigo\WeeklyOffers\Model
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
+ */
 final class Product extends ViewModel
 {
+    /**
+     * @var int
+     */
     protected $id;
 
+    /**
+     * @var string
+     */
     protected $title;
 
-    protected $permalink;
-
+    /**
+     * @var string
+     */
     protected $externalLink;
 
     /**
      * Product constructor.
      * @param $id
      * @param $title
-     * @param $permalink
      * @param $externalLink
      */
-    public function __construct($id, $title, $permalink, $externalLink)
+    public function __construct($id, $title, $externalLink)
     {
         $this->id = (int)$id;
         $this->title = (string) $title;
-        $this->permalink = (string) $permalink;
         $this->externalLink = (string) $externalLink;
      }
 
@@ -31,7 +41,6 @@ final class Product extends ViewModel
      */
     public function getId()
     {
-        echo 'here';
         return $this->id;
     }
 
@@ -41,14 +50,6 @@ final class Product extends ViewModel
     public function getTitle()
     {
         return $this->title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPermalink()
-    {
-        return $this->permalink;
     }
 
     /**
@@ -67,7 +68,6 @@ final class Product extends ViewModel
         return [
             'id' => $this->getId(),
             'title' => $this->getTitle(),
-            'permalink' => $this->getPermalink(),
             'externalLink' => $this->getExternalLink()
         ];
     }

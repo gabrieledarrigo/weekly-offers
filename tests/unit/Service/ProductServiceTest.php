@@ -9,6 +9,11 @@ use Darrigo\WeeklyOffers\Model\Product;
 use Darrigo\WeeklyOffers\Repository\ProductsRepository;
 use Darrigo\WeeklyOffers\Service\ProductsService;
 
+/**
+ * Class ProductsServiceTest
+ * @package Tests\Darrigo\WeeklyOffers\Service
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
+ */
 class ProductsServiceTest extends TestCase
 {
     protected $repository;

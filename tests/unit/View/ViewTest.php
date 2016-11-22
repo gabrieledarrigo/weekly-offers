@@ -4,6 +4,11 @@ namespace Tests\Darrigo\WeeklyOffers\Service;
 use Darrigo\WeeklyOffers\View\View;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class ViewTest
+ * @package Tests\Darrigo\WeeklyOffers\Service
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
+ */
 class ViewTest extends TestCase
 {
     /**

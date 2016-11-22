@@ -1,10 +1,10 @@
 <?php
-
 namespace Darrigo\WeeklyOffers\Dao;
 
 /**
  * Class DbProxy
  * @package Darrigo\WeeklyOffers\Dao
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
  */
 class DbProxy
 {

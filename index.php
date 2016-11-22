@@ -5,7 +5,7 @@
   Author: Gabriele D'Arrigo - darrigo.g@gmail.com
   Version: 1.0
  */
-require dirname(__FILE__) . '/vendor/autoload.php';
+require realpath(__DIR__) . '/vendor/autoload.php';
 
 add_action('widgets_init', function() {
     register_sidebar([

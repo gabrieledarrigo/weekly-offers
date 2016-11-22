@@ -4,6 +4,7 @@ namespace Darrigo\WeeklyOffers\Model;
 /**
  * Class EmptyResult
  * @package Darrigo\WeeklyOffers\Model
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
  */
 final class EmptyResult extends ViewModel
 {

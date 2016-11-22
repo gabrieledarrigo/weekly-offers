@@ -2,7 +2,10 @@
 
 namespace Darrigo\WeeklyOffers\View;
 
-
+/**
+ * Class View
+ * @package Darrigo\WeeklyOffers\View
+ */
 class View implements Renderer
 {
     /**

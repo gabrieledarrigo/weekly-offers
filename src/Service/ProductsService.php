@@ -6,6 +6,7 @@ use Darrigo\WeeklyOffers\Repository\ProductsRepository;
 /**
  * Class ProductsService
  * @package Darrigo\WeeklyOffers\Service
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
  */
 class ProductsService
 {
@@ -23,7 +24,10 @@ class ProductsService
         $this->repository = $repository;
     }
 
-
+    /**
+     * @param $id
+     * @return \PhpOption\None|\PhpOption\Some
+     */
     public function getProduct($id)
     {
         return $this->repository->findById($id);

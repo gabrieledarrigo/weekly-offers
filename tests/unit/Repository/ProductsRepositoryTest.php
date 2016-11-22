@@ -8,6 +8,11 @@ use PHPUnit\Framework\TestCase;
 use Darrigo\WeeklyOffers\Dao\DbProxy;
 use Darrigo\WeeklyOffers\Repository\ProductsRepository;
 
+/**
+ * Class ProductsRepositoryTest
+ * @package Tests\Darrigo\WeeklyOffers\Repository
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
+ */
 class ProductsRepositoryTest extends TestCase
 {
     protected $db;
@@ -26,7 +31,6 @@ class ProductsRepositoryTest extends TestCase
         $sql = "SELECT
             p.ID AS id,
             p.post_title AS title,
-            p.post_name AS permalink,
             (SELECT pm.meta_value FROM wp_postmeta AS pm WHERE pm.post_id = p.ID AND pm.meta_key = 'link_shop') AS external_link
         FROM wp_posts AS p
         WHERE p.ID = %d";
@@ -44,7 +48,6 @@ class ProductsRepositoryTest extends TestCase
             ->willReturn((object) [
                 'id' => $id,
                 'title' => 'Costume Drago',
-                'permalink' => 'http://mazzucchellis.local/prodotti/costume-drago/',
                 'external_link' => 'http://www.google.com'
             ]);
 
@@ -62,7 +65,6 @@ class ProductsRepositoryTest extends TestCase
         $sql = "SELECT
             p.ID AS id,
             p.post_title AS title,
-            p.post_name AS permalink,
             (SELECT pm.meta_value FROM wp_postmeta AS pm WHERE pm.post_id = p.ID AND pm.meta_key = 'link_shop') AS external_link
         FROM wp_posts AS p
         WHERE p.ID = %d";

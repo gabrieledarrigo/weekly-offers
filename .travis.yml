@@ -24,6 +24,11 @@ before_script:
     else
       composer global require "phpunit/phpunit=4.8.*"
     fi
+
 install: composer install
+
 script:
-  - phpunit
+  - phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)

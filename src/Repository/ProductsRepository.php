@@ -9,6 +9,7 @@ use PhpOption\Some;
 /**
  * Class ProductRepository
  * @package Darrigo\WeeklyOffers\Repository
+ * @author Gabriele D'Arrigo - darrigo.g@gmail.com
  */
 class ProductsRepository implements FindableInterface
 {
@@ -35,10 +36,10 @@ class ProductsRepository implements FindableInterface
         $sql = "SELECT
             p.ID AS id,
             p.post_title AS title,
-            p.post_name AS permalink,
             (SELECT pm.meta_value FROM wp_postmeta AS pm WHERE pm.post_id = p.ID AND pm.meta_key = 'link_shop') AS external_link
         FROM wp_posts AS p
         WHERE p.ID = %d";
+
         $query = $this->db->prepare($sql, [$id]);
         $result = $this->db->getRow($query);
 
@@ -46,6 +47,6 @@ class ProductsRepository implements FindableInterface
             return None::create();
         }
 
-        return new Some(new Product($result->id, $result->title, $result->permalink, $result->external_link));
+        return new Some(new Product($result->id, $result->title, $result->external_link));
     }
 }
