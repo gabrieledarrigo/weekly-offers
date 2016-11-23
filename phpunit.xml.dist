@@ -11,6 +11,13 @@
 			<directory suffix=".php">./tests/unit/</directory>
 		</testsuite>
 	</testsuites>
+
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">src</directory>
+		</whitelist>
+	</filter>
+
 	<logging>
 		<log type="coverage-clover" target="clover.xml"/>
 	</logging>
