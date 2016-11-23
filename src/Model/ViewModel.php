@@ -6,7 +6,7 @@ namespace Darrigo\WeeklyOffers\Model;
  * @package Darrigo\WeeklyOffers\Model
  * @author Gabriele D'Arrigo - darrigo.g@gmail.com
  */
-class ViewModel implements ToArray
+abstract class ViewModel implements ToArray
 {
     /**
      * @return array

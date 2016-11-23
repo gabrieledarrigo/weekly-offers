@@ -26,6 +26,25 @@ class ProductTest extends TestCase
         $this->assertEquals($externalLink, $product->getExternalLink());
     }
 
+    /**
+     * @dataProvider productsProvider
+     * @param $id
+     * @param $title
+     * @param $externalLink
+     */
+    public function testItShouldReturnAProductArrayRappresentation($id, $title, $externalLink)
+    {
+        $product = new Product($id, $title, $externalLink);
+        $this->assertEquals([
+            'id' => $id,
+            'title' => $title,
+            'externalLink' => $externalLink
+        ], $product->__toArray());
+    }
+
+    /**
+     * @return array
+     */
     public function productsProvider()
     {
         return [
