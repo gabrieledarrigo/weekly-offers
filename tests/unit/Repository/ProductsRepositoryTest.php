@@ -2,10 +2,10 @@
 namespace Tests\Darrigo\WeeklyOffers\Repository;
 
 use Darrigo\WeeklyOffers\Model\Product;
+use Darrigo\WpPluginUtils\Dao\DbProxy;
 use PhpOption\None;
 use PhpOption\Option;
 use PHPUnit\Framework\TestCase;
-use Darrigo\WeeklyOffers\Dao\DbProxy;
 use Darrigo\WeeklyOffers\Repository\ProductsRepository;
 
 /**

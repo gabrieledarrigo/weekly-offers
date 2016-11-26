@@ -1,12 +1,14 @@
 {
     "name": "darrigo/weekly-offers",
-    "description": "A simple Wordpress widget that show three post",
+    "description": "A WordPress plugin to handle weekly offers for Mazzucchellis.com",
     "type": "library",
     "require": {
-        "doctrine/common": "^2.6",
         "phpoption/phpoption": "^1.5",
-        "phpunit/phpunit": "^5.6",
-        "php-di/php-di": "^5.4"
+        "php-di/php-di": "^5.4",
+        "darrigo/wp-plugin-utils": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.6"
     },
     "license": "MIT",
     "authors": [

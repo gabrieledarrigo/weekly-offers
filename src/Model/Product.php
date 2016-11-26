@@ -1,6 +1,8 @@
 <?php
 namespace Darrigo\WeeklyOffers\Model;
 
+use Darrigo\WpPluginUtils\Model\ViewModel;
+
 /**
  * Class Product
  * @package Darrigo\WeeklyOffers\Model

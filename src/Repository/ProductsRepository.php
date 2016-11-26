@@ -1,8 +1,8 @@
 <?php
 namespace Darrigo\WeeklyOffers\Repository;
 
-use Darrigo\WeeklyOffers\Dao\DbProxy;
 use Darrigo\WeeklyOffers\Model\Product;
+use Darrigo\WpPluginUtils\Dao\DbProxy;
 use PhpOption\None;
 use PhpOption\Some;
 

@@ -2,10 +2,10 @@
 namespace Darrigo\WeeklyOffers\Container;
 
 use Darrigo\WeeklyOffers\Config\WidgetSettings;
-use Darrigo\WeeklyOffers\Dao\DbProxy;
 use Darrigo\WeeklyOffers\Repository\ProductsRepository;
 use Darrigo\WeeklyOffers\Service\ProductsService;
 use Darrigo\WeeklyOffers\Validator\InstanceValidator;
+use Darrigo\WpPluginUtils\Dao\DbProxy;
 
 /**
  * Class Definitions

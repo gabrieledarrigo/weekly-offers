@@ -2,13 +2,12 @@
 namespace Darrigo\WeeklyOffers;
 
 use Darrigo\WeeklyOffers\Container\Definitions;
-use Darrigo\WeeklyOffers\Model\EmptyResult;
 use Darrigo\WeeklyOffers\Model\Instance;
 use Darrigo\WeeklyOffers\Model\Product;
-use Darrigo\WeeklyOffers\Model\ViewModel;
 use Darrigo\WeeklyOffers\Service\ProductsService;
 use Darrigo\WeeklyOffers\Validator\InstanceValidator;
-use Darrigo\WeeklyOffers\View\View;
+use Darrigo\WpPluginUtils\Model\EmptyResult;
+use Darrigo\WpPluginUtils\View\View;
 use \DI\ContainerBuilder;
 
 /**
@@ -59,7 +58,7 @@ class WidgetManager extends \WP_Widget
     {
         $instance = new Instance($instance);
 
-        /** @var ViewModel $result */
+        /** @var Product $result */
         $result = $this->productService
             ->getProduct($instance->getId())
             ->getOrElse(new EmptyResult());

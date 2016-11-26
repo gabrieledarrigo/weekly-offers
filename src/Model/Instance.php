@@ -1,8 +1,10 @@
 <?php
 namespace Darrigo\WeeklyOffers\Model;
 
-use Darrigo\WeeklyOffers\Utils\ArrayCheck;
-use Darrigo\WeeklyOffers\Utils\IsEmpty;
+use Darrigo\WpPluginUtils\Model\ToArray;
+use Darrigo\WpPluginUtils\Utils\ArrayCheck;
+use Darrigo\WpPluginUtils\Utils\IsEmpty;
+
 
 /**
  * Class Instance

@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/gabrieledarrigo/weekly-offers.svg?branch=master)](https://travis-ci.org/gabrieledarrigo/weekly-offers)
 [![codecov](https://codecov.io/gh/gabrieledarrigo/weekly-offers/branch/master/graph/badge.svg)](https://codecov.io/gh/gabrieledarrigo/weekly-offers)
 
-A simple Wordpress plugin to handle weekly offers for Mazzucchellis.com.
+A  Wordpress plugin to handle weekly offers for Mazzucchellis.com
 
 ### How to use
 
