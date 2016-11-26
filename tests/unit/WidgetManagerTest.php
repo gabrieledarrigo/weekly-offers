@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  */
 class WidgetManagerTest extends TestCase
 {
-    public function testItShouldReturnAnInstanceWithTheProductId()
+    public function testItShouldReturnAnInstanceWithProductIdAndProductPrice()
     {
         $manager = new WidgetManager();
         $instance = $manager->update([], []);

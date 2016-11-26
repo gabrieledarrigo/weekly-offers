@@ -14,18 +14,19 @@ class InstanceValidator
 {
     use ArrayCheck, IsEmpty;
 
-    /**
-     * @param Instance $instance
-     * @return bool
-     */
-    public function validate(Instance $instance)
+    const TO_VALIDATE = [
+        Instance::PRODUCT_ID,
+        Instance::PRODUCT_PRICE
+    ];
+
+    public function validate(Instance $instance, $toValidate)
     {
-        if ($this->isEmpty($instance->__toArray())) {
+        if ($this->isEmpty($instance->__toArray()) || in_array($toValidate, self::TO_VALIDATE) === false) {
             return false;
         }
 
-        if (
-            $this->isValueSet($instance->__toArray(), Instance::PRODUCT_ID) === false || $this->isEmpty($instance->__toArray()[Instance::PRODUCT_ID])
+        if ($this->isValueSet($instance->__toArray(), $toValidate) === false ||
+            $this->isEmpty($instance->__toArray()[$toValidate])
         ) {
             return false;
         }

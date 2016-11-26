@@ -4,6 +4,7 @@ namespace Darrigo\WeeklyOffers;
 use Darrigo\WeeklyOffers\Container\Definitions;
 use Darrigo\WeeklyOffers\Model\EmptyResult;
 use Darrigo\WeeklyOffers\Model\Instance;
+use Darrigo\WeeklyOffers\Model\Product;
 use Darrigo\WeeklyOffers\Model\ViewModel;
 use Darrigo\WeeklyOffers\Service\ProductsService;
 use Darrigo\WeeklyOffers\Validator\InstanceValidator;
@@ -56,16 +57,20 @@ class WidgetManager extends \WP_Widget
      */
     public function widget($args, $instance)
     {
+        $instance = new Instance($instance);
+
         /** @var ViewModel $result */
         $result = $this->productService
-            ->getProduct($this->getProductId($instance))
+            ->getProduct($instance->getId())
             ->getOrElse(new EmptyResult());
 
         (new View($this->container->get('view.product'), [
             'widget' => [
                 'name' => $this->name,
             ],
-            'product' => $result->__toArray()
+            'product' => array_merge($result->__toArray(), [
+                'price' => $instance->getPrice()
+            ])
         ]))->render();
     }
 
@@ -75,17 +80,27 @@ class WidgetManager extends \WP_Widget
      */
     public function form($instance)
     {
-        /** @var ViewModel $result */
+        $instance = new Instance($instance);
+
+        /** @var Product $result */
         $result = $this->productService
-            ->getProduct($this->getProductId($instance))
+            ->getProduct($instance->getId())
             ->getOrElse(new EmptyResult());
 
         (new View($this->container->get('view.form'), [
             'fields' => [
-                'id' => $this->get_field_id('product_id'),
-                'name' => $this->get_field_name('product_id'),
+                'product_id' => [
+                    'id' => $this->get_field_id('product_id'),
+                    'name' => $this->get_field_name('product_id'),
+                ],
+                'product_price' => [
+                    'id' => $this->get_field_id('product_price'),
+                    'name' => $this->get_field_name('product_price'),
+                ]
             ],
-            'product' => $result->__toArray()
+            'product' => array_merge($result->__toArray(), [
+                'price' => $instance->getPrice()
+            ])
         ]))->render();
     }
 
@@ -97,22 +112,6 @@ class WidgetManager extends \WP_Widget
     public function update($newInstance, $oldInstance)
     {
         $instance = new Instance($newInstance);
-
-        if ($this->instanceValidator->validate($instance) === false) {
-            return (new Instance([Instance::PRODUCT_ID => '']))->__toArray();
-        }
-
         return $instance->__toArray();
-    }
-
-    /**
-     * @param array $instance
-     * @return int|string
-     */
-    private function getProductId(array $instance)
-    {
-        return $this->instanceValidator->validate(new Instance($instance))
-            ? (int) $instance[Instance::PRODUCT_ID]
-            : '';
     }
 }
