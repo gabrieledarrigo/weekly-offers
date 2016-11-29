@@ -21,7 +21,7 @@
                value="<?php echo esc_attr(empty($product) ? '' : $product['price']); ?>"/>
     </div>
 
-    <?php if (empty($product)): ?>
+    <?php if (!isset($product['id'])): ?>
         <div>
             Non esiste nessun prodotto con questo id.
         </div>
