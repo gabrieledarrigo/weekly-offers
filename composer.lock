@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f2da0ab3c9f47570dc3d652a4f5e1a7",
-    "content-hash": "4bc161115bfd818c22645137a859ff1c",
+    "hash": "329e9ac9412e1dbd6afd37b241504311",
+    "content-hash": "87b7944b52a3cb5bed4523e65ff8880b",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -36,16 +36,16 @@
         },
         {
             "name": "darrigo/wp-plugin-utils",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gabrieledarrigo/wp-plugin-utils.git",
-                "reference": "105c2636086cad09f90df4701b62a3d5d3ee94e2"
+                "reference": "ef01fa58f24abd506a0dafab6efb2c028181f1a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabrieledarrigo/wp-plugin-utils/zipball/105c2636086cad09f90df4701b62a3d5d3ee94e2",
-                "reference": "105c2636086cad09f90df4701b62a3d5d3ee94e2",
+                "url": "https://api.github.com/repos/gabrieledarrigo/wp-plugin-utils/zipball/ef01fa58f24abd506a0dafab6efb2c028181f1a5",
+                "reference": "ef01fa58f24abd506a0dafab6efb2c028181f1a5",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-11-27 12:42:47"
+            "time": "2016-11-29 20:04:53"
         },
         {
             "name": "doctrine/collections",
