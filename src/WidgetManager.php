@@ -6,6 +6,7 @@ use Darrigo\WeeklyOffers\Model\Instance;
 use Darrigo\WeeklyOffers\Model\Product;
 use Darrigo\WeeklyOffers\Service\ProductsService;
 use Darrigo\WeeklyOffers\Validator\InstanceValidator;
+use Darrigo\WpPluginUtils\Model\Collection;
 use Darrigo\WpPluginUtils\Model\EmptyResult;
 use Darrigo\WpPluginUtils\View\View;
 use \DI\ContainerBuilder;
@@ -63,14 +64,14 @@ class WidgetManager extends \WP_Widget
             ->getProduct($instance->getId())
             ->getOrElse(new EmptyResult());
 
-        (new View($this->container->get('view.product'), [
+        (new View($this->container->get('view.product'), new Collection([
             'widget' => [
                 'name' => $this->name,
             ],
             'product' => array_merge($result->__toArray(), [
                 'price' => $instance->getPrice()
             ])
-        ]))->render();
+        ])))->render();
     }
 
     /**
@@ -86,7 +87,7 @@ class WidgetManager extends \WP_Widget
             ->getProduct($instance->getId())
             ->getOrElse(new EmptyResult());
 
-        (new View($this->container->get('view.form'), [
+        (new View($this->container->get('view.form'), new Collection([
             'fields' => [
                 'product_id' => [
                     'id' => $this->get_field_id('product_id'),
@@ -100,7 +101,7 @@ class WidgetManager extends \WP_Widget
             'product' => array_merge($result->__toArray(), [
                 'price' => $instance->getPrice()
             ])
-        ]))->render();
+        ])))->render();
     }
 
     /**
